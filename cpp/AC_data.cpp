@@ -6,6 +6,12 @@
 #include <complex>
 //#include <fftw3.h> // FFT library
 
+struct handshaker{
+    int32_t identifier = 1;
+    int32_t version = 1;
+    int32_t operationid = 0; // 0 for handshake; 1 for 400Hz rt data; 2 for on-demand update; 3 for dismiss
+};
+
 #pragma pack(push, 1) // Defiing structure of UDP data
 struct CarData {
     char identifier; // identifier for structed data
@@ -70,3 +76,11 @@ struct CarData {
     float carCoordinates[3]; // x, y, z coordinates of the car in the track reference
 };
 #pragma pack(pop)
+
+struct RTLap{
+    int32_t carIdentifierNumber;
+    int32_t lap;
+    char driverName[50];
+    char carName[50];
+    int32_t time;
+};
