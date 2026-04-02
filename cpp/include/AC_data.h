@@ -17,7 +17,7 @@ struct handshaker{
     int32_t operationid = 0; // 0 for handshake; 1 for 400Hz rt data; 2 for on-demand update; 3 for dismiss
 };
 
-#pragma pack(push, 1) // Defiing structure of UDP data
+#pragma pack(push, 1) // Defiing structure of UDP data; need (push, 1) to avoid complier padding and formatting for network
 struct CarData {
     char identifier; // identifier for structed data
     int32_t size; // size of data packet in bytes
