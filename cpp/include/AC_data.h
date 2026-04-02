@@ -1,3 +1,8 @@
+#pragma once
+#ifndef AC_DATA_H
+
+#define AC_DATA_H
+
 #include <iostream>
 #include <vector>
 #include <netinet/in.h>
@@ -84,3 +89,5 @@ struct RTLap{
     char carName[50];
     int32_t time;
 };
+
+#endif // AC_DATA_H
